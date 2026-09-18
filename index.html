@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中秋AI祝福密码机</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 装饰：月亮和星星 -->
+    <div class="decor moon-decor"></div>
+    <div class="decor star star-1">✦</div>
+    <div class="decor star star-2">✦</div>
+    <div class="decor star star-3">✦</div>
+
+    <!-- 顶部标题 -->
+    <header class="header">
+        <h1>🌕 中秋AI祝福密码机</h1>
+        <p class="subtitle">"每一个图案，都藏着一句话。"</p>
+    </header>
+
+    <main class="main-container">
+
+        <!-- 操作区 -->
+        <section class="panel operation-panel">
+
+            <!-- 图案选择区 -->
+            <div class="section">
+                <h2>请选择你的秘密图案</h2>
+                <div class="emoji-buttons">
+                    <button class="emoji-btn" data-emoji="⭐">⭐</button>
+                    <button class="emoji-btn" data-emoji="🌕">🌕</button>
+                    <button class="emoji-btn" data-emoji="🐇">🐇</button>
+                    <button class="emoji-btn" data-emoji="🥮">🥮</button>
+                    <button class="emoji-btn" data-emoji="❤️">❤️</button>
+                </div>
+            </div>
+
+            <!-- 密文显示区 -->
+            <div class="section">
+                <h2>🔐 我的神秘密文</h2>
+                <div class="cipher-display" id="cipherDisplay">
+                    <span class="cipher-placeholder">点击下面的图案，创造一条秘密祝福吧！</span>
+                </div>
+                <div class="cipher-actions">
+                    <button class="btn-small" id="btnUndo">↩ 撤回一个</button>
+                    <button class="btn-small" id="btnClear">🗑 清空</button>
+                </div>
+            </div>
+
+            <!-- 解密按钮 -->
+            <div class="section decrypt-section">
+                <button class="btn-decrypt" id="btnDecrypt">🔓 开始解密</button>
+            </div>
+
+            <!-- 解密过程区 -->
+            <div class="section decrypt-process" id="decryptProcess" style="display:none;">
+                <h2 id="processTitle">正在读取密码……</h2>
+                <div class="process-steps" id="processSteps"></div>
+                <div class="final-result" id="finalResult" style="display:none;"></div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- 查看程序规则 -->
+    <section class="panel rules-panel">
+        <button class="btn-toggle" id="btnToggleRules">👀 查看我的程序规则</button>
+        <div class="rules-content" id="rulesContent" style="display:none;">
+            <p class="rules-intro">密码机的内部是这样工作的：</p>
+            <div class="rules-list">
+                <div class="rule-item">如果看到 <span class="rule-emoji">⭐</span> → 读作 <span class="rule-word">"祝你"</span></div>
+                <div class="rule-item">如果看到 <span class="rule-emoji">🌕</span> → 读作 <span class="rule-word">"中秋"</span></div>
+                <div class="rule-item">如果看到 <span class="rule-emoji">🐇</span> → 读作 <span class="rule-word">"快乐"</span></div>
+                <div class="rule-item">如果看到 <span class="rule-emoji">🥮</span> → 读作 <span class="rule-word">"团圆"</span></div>
+                <div class="rule-item">如果看到 <span class="rule-emoji">❤️</span> → 读作 <span class="rule-word">"幸福"</span></div>
+            </div>
+            <p class="rules-note">程序会按照你选择图案的顺序，一个一个查表替换，最后拼成一句话！</p>
+        </div>
+    </section>
+
+    <!-- 密码机工作原理 -->
+    <section class="panel how-it-works-panel">
+        <h2>🧠 密码机是怎么工作的？</h2>
+        <div class="flow-chart">
+            <div class="flow-step">
+                <div class="flow-icon">🎯</div>
+                <div class="flow-text">选择图案</div>
+            </div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step">
+                <div class="flow-icon">📖</div>
+                <div class="flow-text">读取密码规则</div>
+            </div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step">
+                <div class="flow-icon">🔍</div>
+                <div class="flow-text">找到对应意思</div>
+            </div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step">
+                <div class="flow-icon">🔗</div>
+                <div class="flow-text">按照顺序组合</div>
+            </div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step">
+                <div class="flow-icon">🎉</div>
+                <div class="flow-text">得到祝福语</div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>中秋AI编程课堂 · 让每个孩子理解程序的力量</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

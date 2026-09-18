@@ -1,0 +1,600 @@
+/* ============================================
+   中秋AI祝福密码机 - 样式表
+   配色：米白背景 + 暖黄月亮 + 深蓝文字 + 橙黄点缀
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", sans-serif;
+    background: #FDF6E3;
+    color: #1a2744;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* ---------- 装饰元素 ---------- */
+.decor {
+    position: fixed;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.moon-decor {
+    top: -60px;
+    right: -60px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 40%, #FFE082, #FFD54F, #FFC107);
+    box-shadow: 0 0 80px rgba(255, 193, 7, 0.35);
+    opacity: 0.5;
+}
+
+.star {
+    color: #FFB300;
+    font-size: 22px;
+    opacity: 0.4;
+    animation: twinkle 3s ease-in-out infinite;
+}
+
+.star-1 { top: 80px; right: 180px; animation-delay: 0s; }
+.star-2 { top: 150px; right: 60px; animation-delay: 1s; font-size: 16px; }
+.star-3 { top: 40px; left: 120px; animation-delay: 2s; font-size: 18px; }
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.2); }
+}
+
+/* ---------- 顶部标题 ---------- */
+.header {
+    text-align: center;
+    padding: 36px 20px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.header h1 {
+    font-size: 42px;
+    color: #1a2744;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #5D4037;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* ---------- 主容器 ---------- */
+.main-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 32px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ---------- 通用面板 ---------- */
+.panel {
+    background: #FFFDF5;
+    border: 2px solid #E8D5B7;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.panel h2 {
+    font-size: 20px;
+    color: #1a2744;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+/* ---------- 操作区 ---------- */
+.operation-panel {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.section {
+    text-align: center;
+}
+
+/* ---------- 图案按钮 ---------- */
+.emoji-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.emoji-btn {
+    width: 80px;
+    height: 80px;
+    font-size: 40px;
+    border: 3px solid #E8D5B7;
+    border-radius: 16px;
+    background: #FFFDF5;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    user-select: none;
+}
+
+.emoji-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(255, 152, 0, 0.25);
+    border-color: #FFB300;
+}
+
+.emoji-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: #FFF3E0;
+}
+
+/* ---------- 密文显示区 ---------- */
+.cipher-display {
+    min-height: 70px;
+    background: #F5EDD8;
+    border: 2px dashed #C9A96E;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.cipher-placeholder {
+    color: #9E8E72;
+    font-size: 16px;
+}
+
+.cipher-item {
+    font-size: 36px;
+    animation: popIn 0.25s ease;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0); opacity: 0; }
+    70% { transform: scale(1.2); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.cipher-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.btn-small {
+    padding: 8px 20px;
+    font-size: 15px;
+    border: 2px solid #C9A96E;
+    border-radius: 10px;
+    background: #FFFDF5;
+    color: #5D4037;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    user-select: none;
+}
+
+.btn-small:hover {
+    background: #FFF3E0;
+    border-color: #FFB300;
+}
+
+/* ---------- 解密按钮 ---------- */
+.decrypt-section {
+    margin-top: 4px;
+}
+
+.btn-decrypt {
+    padding: 16px 48px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #FFF;
+    background: linear-gradient(135deg, #FFB300, #FF8F00);
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(255, 152, 0, 0.35);
+    transition: all 0.25s ease;
+    letter-spacing: 2px;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    user-select: none;
+}
+
+.btn-decrypt:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(255, 152, 0, 0.45);
+}
+
+.btn-decrypt:active {
+    transform: translateY(0);
+}
+
+.btn-decrypt:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ---------- 解密过程 ---------- */
+.decrypt-process {
+    background: #F5EDD8;
+    border: 2px solid #C9A96E;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+}
+
+.decrypt-process h2 {
+    margin-bottom: 14px;
+    color: #5D4037;
+    font-size: 18px;
+}
+
+.process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+}
+
+.process-step {
+    font-size: 20px;
+    padding: 8px 18px;
+    background: #FFFDF5;
+    border-radius: 10px;
+    border: 1px solid #E0D0B8;
+    animation: fadeSlideIn 0.35s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.process-step .step-emoji {
+    font-size: 28px;
+}
+
+.process-step .step-arrow {
+    color: #B0885A;
+    font-size: 18px;
+}
+
+.process-step .step-word {
+    font-weight: 700;
+    color: #E65100;
+    font-size: 20px;
+}
+
+@keyframes fadeSlideIn {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.final-result {
+    margin-top: 18px;
+    padding: 18px 24px;
+    background: linear-gradient(135deg, #FFF3E0, #FFE0B2);
+    border: 2px solid #FFB300;
+    border-radius: 14px;
+    font-size: 28px;
+    font-weight: 700;
+    color: #BF360C;
+    animation: celebrateIn 0.5s ease;
+    letter-spacing: 2px;
+}
+
+@keyframes celebrateIn {
+    0% { opacity: 0; transform: scale(0.7); }
+    60% { transform: scale(1.05); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* ---------- 查看规则面板 ---------- */
+.rules-panel {
+    max-width: 900px;
+    margin: 0 auto 20px;
+    text-align: center;
+}
+
+.btn-toggle {
+    padding: 12px 32px;
+    font-size: 18px;
+    border: 2px solid #C9A96E;
+    border-radius: 12px;
+    background: #FFFDF5;
+    color: #5D4037;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 600;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    user-select: none;
+}
+
+.btn-toggle:hover {
+    background: #FFF3E0;
+    border-color: #FFB300;
+}
+
+.rules-content {
+    margin-top: 16px;
+    text-align: left;
+}
+
+.rules-intro {
+    font-size: 16px;
+    color: #5D4037;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.rules-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.rule-item {
+    font-size: 18px;
+    padding: 10px 16px;
+    background: #F5EDD8;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.rule-emoji {
+    font-size: 24px;
+}
+
+.rule-word {
+    font-weight: 700;
+    color: #E65100;
+}
+
+.rules-note {
+    font-size: 15px;
+    color: #6D4C41;
+    text-align: center;
+    font-style: italic;
+}
+
+/* ---------- 工作原理面板 ---------- */
+.how-it-works-panel {
+    max-width: 900px;
+    margin: 0 auto 20px;
+    text-align: center;
+}
+
+.flow-chart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+.flow-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 14px 18px;
+    background: #F5EDD8;
+    border-radius: 12px;
+    border: 1px solid #E0D0B8;
+    min-width: 100px;
+}
+
+.flow-icon {
+    font-size: 30px;
+}
+
+.flow-text {
+    font-size: 14px;
+    color: #1a2744;
+    font-weight: 600;
+}
+
+.flow-arrow {
+    font-size: 24px;
+    color: #B0885A;
+    font-weight: 700;
+}
+
+/* ---------- 底部 ---------- */
+.footer {
+    text-align: center;
+    padding: 18px;
+    color: #9E8E72;
+    font-size: 14px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ---------- 平板适配 ---------- */
+@media (max-width: 800px) {
+    .header h1 {
+        font-size: 30px;
+    }
+    .emoji-btn {
+        width: 64px;
+        height: 64px;
+        font-size: 32px;
+    }
+}
+
+/* ---------- 手机适配 ---------- */
+@media (max-width: 520px) {
+    /* 头部 */
+    .header {
+        padding: 20px 16px 12px;
+    }
+    .header h1 {
+        font-size: 26px;
+        letter-spacing: 1px;
+    }
+    .subtitle {
+        font-size: 14px;
+    }
+
+    /* 主容器 */
+    .main-container {
+        padding: 0 12px 16px;
+    }
+
+    /* 面板 */
+    .panel {
+        padding: 16px 12px;
+        border-radius: 12px;
+    }
+    .panel h2 {
+        font-size: 17px;
+        margin-bottom: 12px;
+    }
+
+    /* 图案按钮 */
+    .emoji-buttons {
+        gap: 10px;
+    }
+    .emoji-btn {
+        width: 56px;
+        height: 56px;
+        font-size: 28px;
+        border-radius: 12px;
+    }
+
+    /* 密文区 */
+    .cipher-display {
+        min-height: 56px;
+        padding: 12px;
+        gap: 8px;
+    }
+    .cipher-item {
+        font-size: 28px;
+    }
+    .cipher-placeholder {
+        font-size: 14px;
+    }
+
+    /* 小按钮 */
+    .btn-small {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+
+    /* 解密按钮 */
+    .btn-decrypt {
+        padding: 14px 28px;
+        font-size: 20px;
+        width: 100%;
+    }
+
+    /* 解密过程 */
+    .decrypt-process {
+        padding: 14px 10px;
+    }
+    .decrypt-process h2 {
+        font-size: 16px;
+    }
+    .process-step {
+        font-size: 17px;
+        padding: 6px 14px;
+        gap: 8px;
+    }
+    .process-step .step-emoji {
+        font-size: 24px;
+    }
+    .process-step .step-word {
+        font-size: 17px;
+    }
+    .final-result {
+        font-size: 22px;
+        padding: 14px 16px;
+    }
+
+    /* 规则面板 */
+    .rules-panel {
+        padding: 14px 12px;
+    }
+    .btn-toggle {
+        font-size: 16px;
+        padding: 10px 20px;
+        width: 100%;
+    }
+    .rule-item {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+    .rule-emoji {
+        font-size: 20px;
+    }
+
+    /* 工作流程 - 手机上改为纵向排列 */
+    .how-it-works-panel {
+        padding: 14px 12px;
+    }
+    .flow-chart {
+        flex-direction: column;
+        gap: 4px;
+    }
+    .flow-step {
+        flex-direction: row;
+        gap: 10px;
+        padding: 10px 16px;
+        min-width: unset;
+        width: 100%;
+    }
+    .flow-icon {
+        font-size: 24px;
+    }
+    .flow-text {
+        font-size: 14px;
+    }
+    .flow-arrow {
+        font-size: 18px;
+    }
+
+    /* 装饰 */
+    .moon-decor {
+        width: 120px;
+        height: 120px;
+        top: -40px;
+        right: -40px;
+    }
+    .star { display: none; }
+
+    /* 底部 */
+    .footer {
+        font-size: 12px;
+        padding: 14px;
+    }
+}
