@@ -8,14 +8,11 @@
    ============================================ */
 
 const codeMap = {
-    "🛣️": "长",
-    "❤️": "命",
-    "💯": "百",
-    "🎉": "岁",
-    "👤": "身",
-    "": "体",
-    "": "健",
-    "🏥": "康"
+    "⭐": "祝你",
+    "🌕": "中秋",
+    "🏠": "团圆",
+    "🍎": "健康",
+    "🛡️": "平安"
 };
 
 /* ============================================
@@ -115,7 +112,7 @@ function renderCipher() {
     if (selectedEmojis.length === 0) {
         var placeholder = document.createElement("span");
         placeholder.className = "cipher-placeholder";
-        placeholder.textContent = "点击下面的图案，创造一条秘密祝福吧！";
+        placeholder.textContent = "点击上面的图案，创造一条秘密祝福吧！";
         cipherDisplay.appendChild(placeholder);
         return;
     }
